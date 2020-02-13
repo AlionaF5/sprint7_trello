@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from django.forms import ModelForm
-from app1.models import Tablero
-from app1.models import Lista
-from app1.models import Tarea
+from app1.models import Tablero, Lista, Tarea
 
 # Create your views here.
 class TableroForm(ModelForm):
