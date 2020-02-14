@@ -4,9 +4,15 @@ from django.db import models
 class Tablero(models.Model):
     nombre_tablero = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.nombre_tablero
+
 class Lista(models.Model):
     nombre_lista = models.CharField(max_length=50)
     fk_tablero = models.ForeignKey(Tablero, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.nombre_lista
 
 class Tarea(models.Model):
     nombre_tarea = models.CharField(max_length=50)
