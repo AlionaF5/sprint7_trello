@@ -7,28 +7,35 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <title>Sprint 7</title>
+    <title>Sprint 7-- OpenTrello</title>
 </head>
+<title>
+    {% block title %}
+
+    {% endblock %}
+
+</title>
 
 <body>
-    <div id="contenedorBusqueda">
-        <input type="text" class="contenedorBusqueda" id="searchInput" placeholder="Tablero">
-        <button class="searchControl" id="searchBtn">Buscar</button>
-    </div>
-    <div class="principal">
-        <div class="lienzo">
-            <form class="formulario" action="">
-                <input type="text" id="tareainput" placeholder="Agrega tarea">
-                <input type="text" class="boton" id="btn-agregar" value="Agregar tarea">
-            </form>
-
+    <header>
+        <div class="cabecera" id="contenedor">
+            <div class="contenedortareas">
+                <h1 class="titulo">Open Trello</h1>
+            </div>
         </div>
+    </header>
+    {% block content %}
+    <!--aca vendra el bloque cambiante-->
+    {% endblock %}
 
 
-
-    </div>
-
-
+    <footer class="pie_pagina">
+        <div id="piepagina">
+            <div class="contenedor_foot">
+                <h3 class="titulof">Copyright</h3>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
