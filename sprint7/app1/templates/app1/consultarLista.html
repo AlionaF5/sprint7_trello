@@ -1,0 +1,17 @@
+{% extends "app1/inicio.html" %}
+{% block content %}
+	<table class="table">
+
+		{% for lista in object_list %}<!--a cada cliente le voy asignar mi posicion q tiene mi object_list-->
+			<tr>
+				<td>{{lista.nombre_lista}}</td>
+				 <!--lo quiero imprimir por pantalla-->
+				<td>
+					
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+
+{% endblock %}

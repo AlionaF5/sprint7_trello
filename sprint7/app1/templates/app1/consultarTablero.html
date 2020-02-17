@@ -1,0 +1,20 @@
+{% extends "app1/base.html" %}
+{% block content %}
+	<table class="table">
+
+		{% for tablero in object_list %}<!--a cada cliente le voy asignar mi posicion q tiene mi object_list-->
+			<tr>
+				<td>{{tablero.nombre_tablero}}</td>
+				 <!--lo quiero imprimir por pantalla-->
+				<td>
+					{% comment %}
+					<a href="{% 'editar_cliente' %}">EDITAR</a><!--colocamos nuestro name de nuestra url-->
+					
+					{% endcomment %}
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "app1/base.html" %}<!--el hijo es crearTablero va a heredar todo de inicio-->
+
+{% block content %}
+<div id="crearTablero">
+	<form method="POST">{% csrf_token %}
+
+		{{form.as_p}}
+		<input type="submit" value="Enviar">
+	</form>
+</div>
+
+{% endblock %}
