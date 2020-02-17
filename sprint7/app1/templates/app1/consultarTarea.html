@@ -1,0 +1,18 @@
+{% extends "app1/index.html" %}
+{% block content %}
+	<table class="table">
+		{% for tarea in objectlist %}
+		 	<tr>
+		 		<td>{{lista.nombre_tarea}}</td>
+		 		<td>{{lista.descripcion}}</td>
+		 		<td>{{lista.fk_lista}}</td>
+
+		 		<td>
+		 			<a href="{% 'modificarTarea' %}">
+		 				Modificar
+		 			</a>
+		 		</td>
+		 	</tr>		 	
+		 {% endfor %}
+	</table>
+{% endblock %}
