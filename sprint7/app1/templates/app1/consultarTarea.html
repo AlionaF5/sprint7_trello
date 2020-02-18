@@ -3,16 +3,18 @@
 	<table class="table">
 		{% for tarea in objectlist %}
 		 	<tr>
-		 		<td>{{lista.nombre_tarea}}</td>
-		 		<td>{{lista.descripcion}}</td>
-		 		<td>{{lista.fk_lista}}</td>
+				<td>{{tarea.nombre_tarea}}</td>
+				<td>{{tarea.descripcion}}</td>
+				 <!--lo quiero imprimir por pantalla-->
+				 
+				<td>
+					<a href="{% url 'modificarTarea' tarea.id %}">Modificar</a>
+				</td>
 
-		 		<td>
-		 			<a href="{% 'modificarTarea' %}">
-		 				Modificar
-		 			</a>
-		 		</td>
-		 	</tr>		 	
+				<td>
+					<a href="{% url 'eliminarTarea' tarea.id %}">Eliminar</a>
+				</td>
+			</tr>		 	
 		 {% endfor %}
 	</table>
 {% endblock %}

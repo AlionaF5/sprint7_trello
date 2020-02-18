@@ -3,13 +3,21 @@
 	<table class="table">
 		{% for tablero in objectlist %}
 		 	<tr>
-		 		<td>{{tablero.nombre_tablero}}</td>
-		 		<td>
-		 			<a href="{% 'modificarTablero' %}">
-		 				Modificar
-		 			</a>
-		 		</td>
-		 	</tr>		 	
+				<td>{{tablero.nombre_tablero}}</td>
+				 <!--lo quiero imprimir por pantalla-->
+				<td>
+					
+					<a href="{% url 'modificarTablero' tablero.id %}">Modificar</a><!--colocamos nuestro name de nuestra url-->
+					
+					
+				</td>
+				<td>
+					<a href="{% url 'eliminarTablero' tablero.id %}">Eliminar</a>
+				</td>
+				<td>
+					<a href="{% url 'consultarLista' tablero.id %}">Ver listas</a>
+				</td>
+			</tr>		 	
 		 {% endfor %}
 	</table>
 {% endblock %}

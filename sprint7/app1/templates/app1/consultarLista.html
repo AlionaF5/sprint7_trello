@@ -3,15 +3,20 @@
 	<table class="table">
 		{% for lista in objectlist %}
 		 	<tr>
-		 		<td>{{lista.nombre_lista}}</td>
-		 		<td>{{lista.fk_tablero}}</td>
+				<td>{{lista.nombre_lista}}</td>
+				 <!--lo quiero imprimir por pantalla-->
+				 
+				<td>
+					<a href="{% url 'modificarLista' lista.id %}">Modificar</a>
+				</td>
 
-		 		<td>
-		 			<a href="{% 'modificarLista' %}">
-		 				Modificar
-		 			</a>
-		 		</td>
-		 	</tr>		 	
+				<td>
+					<a href="{% url 'eliminarLista' lista.id %}">Eliminar</a>
+				</td>
+
+				<td>
+					<a href="{% url 'consultarTarea' lista.id %}">Ver tareas</a>
+				</td>		 	
 		 {% endfor %}
 	</table>
 {% endblock %}
