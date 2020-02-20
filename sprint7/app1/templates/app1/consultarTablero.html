@@ -1,20 +1,35 @@
 {% extends "app1/base.html" %}
 {% block content %}
-	<table class="table">
-
-		{% for tablero in object_list %}<!--a cada cliente le voy asignar mi posicion q tiene mi object_list-->
+<div id="consultaTablero" class="table-responsive-lg">
+	<table class="table table-striped table-bordered table-sm table-hover " cellspacing="0" width="100%" id="dtBasicExample">
+		<h2>Consulta Tablero</h2>
+		<thead>
 			<tr>
-				<td>{{tablero.nombre_tablero}}</td>
-				 <!--lo quiero imprimir por pantalla-->
-				<td>
-					{% comment %}
-					<a href="{% 'editar_cliente' %}">EDITAR</a><!--colocamos nuestro name de nuestra url-->
-					
-					{% endcomment %}
-				</td>
+				<th class="th-sm text-white" scope="col">Tablero
+
+				</th>
+				<th class="th-sm text-white font-weight-bold" colspan="3" scope="col"> Selecciona tu acción
+				</th>
 			</tr>
+		</thead>
+		{% for tablero in object_list %}
+		<!--a cada cliente le voy asignar mi posicion q tiene mi object_list-->
+		<tr>
+			<td class="text-white">{{tablero.nombre_tablero}}</td>
+			<!--lo quiero imprimir por pantalla-->
+			<td>
+				<a href="{% url 'editarTablero' tablero.id %}" class="btn btn-success text-white">Editar</a>
+				<!--colocamos nuestro name de nuestra url-->
+			</td>
+			<td>
+				<a href="{% url 'eliminarTablero' tablero.id %}" class="btn btn-danger text-white">Eliminar</a>
+			</td>
+			<td>
+				<a href="{% url 'consultarLista' tablero.id %}" class="btn btn-primary text-white">Ver listas</a>
+			</td>
+		</tr>
 		{% endfor %}
 	</table>
-	
+</div>
 
 {% endblock %}

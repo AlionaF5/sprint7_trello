@@ -25,16 +25,15 @@ body{
     width: 100%;
     height: 100px;
  }
-.logo {
+ .logo {
     width: 50px;
     height: 50px;
 }
 .texto {
-    font-size: 14px;
-    text-shadow: 1px 1px 1px white;
+    font-size: 14px;    
 }
-.nav-item a{
-    color: white;
+.nav-item {
+   color: white;
 }
 #crearTablero{
     background-color: rgba(0,0,0,0.25);
@@ -42,6 +41,21 @@ body{
     padding: 50px;
     border-radius: 10px;
     position: absolute;
+    top: 150px;
+    left: 80px;
+}
+#consultaTablero{
+    background-color: rgba(0,0,0,0.25);
+    box-shadow:  1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+    position: absolute;
+    top: 120px;
+    left: 250px;
+  
+}
+label{
+    color: white;
 }
 #piepagina{
     background-color: rgba(0,0,0,0.25);
@@ -55,9 +69,13 @@ body{
 .op{
     color: white;
 }
-h1{
+h1 p{
     color: white;
     text-align: center;
 }
+h2{
+    text-align: center;
+}
+
 
 

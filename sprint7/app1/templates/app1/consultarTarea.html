@@ -1,18 +1,36 @@
-{% extends "app1/inicio.html" %}
+{% extends "app1/base.html" %}
 {% block content %}
+<div id="consultaTablero" class="table-responsive-lg">
 	<table class="table">
+	<h2>Consulta Tarea</h2>
+		<thead>
+			<tr>
+				<th class="th-sm text-white" scope="col">Tarea
+
+				</th>
+				<th class="th-sm text-white" scope="col">Descripción
+
+				</th>
+				<th class="th-sm text-white font-weight-bold" colspan="3" scope="col"> Selecciona tu acción
+				</th>
+			</tr>
+		</thead>
 
 		{% for tarea in object_list %}<!--a cada cliente le voy asignar mi posicion q tiene mi object_list-->
 			<tr>
-				<td>{{tarea.nombre_tarea}}</td>
-				<td>{{tarea.descripcion}}</td>
-				 <!--lo quiero imprimir por pantalla-->
+				<td class="text-white">{{tarea.nombre_tarea}}</td>
+				<td class="text-white">{{tarea.descripcion}}</td>
+							 
 				<td>
-					
+					<a  class="text-white btn btn-success" href="{% url 'editarTarea' tarea.id %}">Editar</a>
+				</td>
+
+				<td>
+					<a class="text-white btn btn-danger" href="{% url 'eliminarTarea' tarea.id %}">Eliminar</a>
 				</td>
 			</tr>
 		{% endfor %}
 	</table>
 	
-
+</div>
 {% endblock %}
